@@ -6,7 +6,7 @@ function App() {
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
-            QwikText
+            QwikText - Text Editor
           </a>
           <button
             className="navbar-toggler"
