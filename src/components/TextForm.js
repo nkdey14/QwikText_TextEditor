@@ -1,4 +1,4 @@
-// Using useState hook, that helps us to use features of Class
+// Using useState hook, that helps us to use features of Class without using class component
 import React, { useState } from "react";
 
 export default function TextForm(props) {
@@ -22,6 +22,19 @@ export default function TextForm(props) {
     setText(clrText);
   };
 
+  // Copies Text
+  const handleCopyClick = () => {
+    var text = document.getElementById("myBox");
+    text.select();
+    navigator.clipboard.writeText(text.value);
+  };
+
+  // Removed Extra Spaces
+  const handleSpacesClick = () => {
+    let newText = text.split(/[ ]+/);
+    setText(newText.join(" "));
+  };
+
   // Handling Event
   const handleOnChange = (event) => {
     // console.log("On Change");
@@ -43,14 +56,20 @@ export default function TextForm(props) {
         </div>
       </div>
       <div className="container my-2 mx-2">
-        <button className="btn btn-primary mx-2" onClick={handleUpClick}>
+        <button className="btn btn-primary mx-1" onClick={handleUpClick}>
           Convert to UpperCase
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleLwClick}>
+        <button className="btn btn-primary mx-1" onClick={handleLwClick}>
           Convert to LowerCase
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleClearText}>
+        <button className="btn btn-primary mx-1" onClick={handleClearText}>
           Clear Text
+        </button>
+        <button className="btn btn-primary mx-1" onClick={handleCopyClick}>
+          Copy Text
+        </button>
+        <button className="btn btn-primary mx-1" onClick={handleSpacesClick}>
+          Remove Extra Spaces
         </button>
       </div>
       <div className="container my-3">
@@ -67,7 +86,14 @@ export default function TextForm(props) {
           words and <strong>{text.length}</strong> characters
         </p>
         <p>
-          <strong>{0.008 * text.split(" ").length} </strong>Minutes Spent
+          <strong>
+            {
+              text.split(" ").filter((element) => {
+                return element.length !== 0;
+              }).length
+            }{" "}
+          </strong>
+          Minutes Spent
         </p>
         <h3>Preview</h3>
         <p>{text.length > 0 ? text : "No Text To Preview"}</p>
