@@ -7,6 +7,7 @@ export default function TextForm(props) {
     // console.log("Upper case was clicked");
     let ucText = text.toUpperCase();
     setText(ucText);
+    props.showAlert("Converted to UpperCase!", "success");
   };
 
   // Converts Text to LowerCase
@@ -14,6 +15,7 @@ export default function TextForm(props) {
     // console.log("LowerCase was clicked");
     let lcText = text.toLowerCase();
     setText(lcText);
+    props.showAlert("Converted to LowerCase!", "success");
   };
 
   // Copies Text
@@ -21,18 +23,21 @@ export default function TextForm(props) {
     var text = document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Copied to Clipboard!", "success");
   };
 
   // Removed Extra Spaces
   const handleSpacesClick = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("Extra Spaces Removed!", "success");
   };
 
   // Clears Text
   const handleClearText = () => {
     let clrText = "";
     setText(clrText);
+    props.showAlert("Text Cleared!", "success");
   };
 
   // Handling Event
