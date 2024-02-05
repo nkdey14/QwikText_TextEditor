@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/QwikText_TextEditor/static/css/main.dc4d6ff2.css",
+    "main.js": "/QwikText_TextEditor/static/js/main.64865511.js",
+    "static/js/787.10da2502.chunk.js": "/QwikText_TextEditor/static/js/787.10da2502.chunk.js",
+    "index.html": "/QwikText_TextEditor/index.html",
+    "main.dc4d6ff2.css.map": "/QwikText_TextEditor/static/css/main.dc4d6ff2.css.map",
+    "main.64865511.js.map": "/QwikText_TextEditor/static/js/main.64865511.js.map",
+    "787.10da2502.chunk.js.map": "/QwikText_TextEditor/static/js/787.10da2502.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc4d6ff2.css",
+    "static/js/main.64865511.js"
+  ]
+}
