@@ -27,7 +27,7 @@ export default function About() {
 
   return (
     <div className="container my-3" style={myStyle}>
-      <h3>About TextUtils</h3>
+      <h3>About QwikText</h3>
       <div className="accordion" id="accordionExample">
         <div className="accordion-item">
           <h2 className="accordion-header">
