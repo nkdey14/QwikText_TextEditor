@@ -60,8 +60,8 @@ export default function TextForm(props) {
           <textarea
             className="form-control"
             style={{
-              color: props.mode === "dark" ? "white" : "black",
-              backgroundColor: props.mode === "light" ? "white" : "#042743",
+              color: props.mode === "dark" ? "white" : "#042743",
+              backgroundColor: props.mode === "light" ? "white" : "#13466e",
             }}
             id="myBox"
             onChange={handleOnChange}
@@ -71,19 +71,39 @@ export default function TextForm(props) {
         </div>
       </div>
       <div className="container my-2 mx-2">
-        <button className="btn btn-primary mx-1" onClick={handleUpClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleUpClick}
+        >
           Convert to UpperCase
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleLwClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleLwClick}
+        >
           Convert to LowerCase
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleCopyClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleCopyClick}
+        >
           Copy Text
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleSpacesClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleSpacesClick}
+        >
           Remove Extra Spaces
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleClearText}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleClearText}
+        >
           Clear Text
         </button>
       </div>
@@ -116,7 +136,7 @@ export default function TextForm(props) {
           Minutes Spent
         </p>
         <h3>Preview</h3>
-        <p>{text.length > 0 ? text : "No Text To Preview"}</p>
+        <p>{text.length > 0 ? text : "Nothing To Preview!"}</p>
       </div>
       <br></br>
     </>
