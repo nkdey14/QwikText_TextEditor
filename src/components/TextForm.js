@@ -20,9 +20,10 @@ export default function TextForm(props) {
 
   // Copies Text
   const handleCopyClick = () => {
-    var text = document.getElementById("myBox");
+    // var text = document.getElementById("myBox");
     // text.select();
-    navigator.clipboard.writeText(text.value);
+    // navigator.clipboard.writeText(text.value);
+    navigator.clipboard.writeText(text);
     props.showAlert("Copied to Clipboard!", "success");
   };
 
@@ -118,7 +119,7 @@ export default function TextForm(props) {
           <strong>
             {" "}
             {
-              text.split(" ").filter((element) => {
+              text.split(/\s+/).filter((element) => {
                 return element.length !== 0;
               }).length
             }
@@ -128,7 +129,7 @@ export default function TextForm(props) {
         <p>
           <strong>
             {
-              text.split(" ").filter((element) => {
+              text.split(/\s+/).filter((element) => {
                 return element.length !== 0;
               }).length
             }{" "}
